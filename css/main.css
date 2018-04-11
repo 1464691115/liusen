@@ -111,6 +111,7 @@ body {
     width: 189px;
     color: #fff;
     position: relative;
+    z-index: 999;
 }
 
 .shopClass h3 {
