@@ -229,3 +229,10 @@ body {
     color: #ff7300;
     transition: all 0.3s;
 }
+.carouselUl li{
+
+}
+.carouselUl li img{
+    width:840px;
+    height:470px;
+}
