@@ -48,19 +48,25 @@
     </style>
     <script>
         window.onload = function() {
-            var sp = document.getElementsByTagName("span");
-            var cons = document.querySelector(".bd").getElementsByTagName("div");
-            for(var i = 0; i < sp.length; i++) {
-                sp[i].index = i;
-
-                sp[i].onmouseover = function() {
-                    for(var j = 0; j < sp.length; j++) {
-                        sp[j].className = "";
-                        cons[j].className = "";
-                    }
-                    this.className = "current";
-                    cons[this.index].className = "show";
-                }
+            // var sp = document.getElementsByTagName("span");
+            // var cons = document.querySelector(".bd").getElementsByTagName("div");
+            // for(var i = 0; i < sp.length; i++) {
+            //     sp[i].index = i;
+            //
+            //     sp[i].onmouseover = function() {
+            //         for(var j = 0; j < sp.length; j++) {
+            //             sp[j].className = "";
+            //             cons[j].className = "";
+            //         }
+            //         this.className = "current";
+            //         cons[this.index].className = "show";
+            //     }
+            // }
+            document.getElementById("ccid").onmousemove=function () {
+                document.getElementById("ddid").classList.add("dd");
+            }
+            document.getElementById("ccid").onmouseout=function () {
+                document.getElementById("ddid").classList.remove("dd");
             }
         }
     </script>
@@ -83,6 +89,56 @@
         <!--<div>我是娱乐新闻</div>-->
     <!--</div>-->
 <!--</div>-->
+<style>
+    body{
+        background-color: black;
+    }
+    .aa{
+        margin: 100px auto;
+        position: relative;
+
+    }
+    .cc{
+        z-index: 999;
+        position: absolute;
+        width:170px;
+        height: 170px;
+        border:15px solid #ffffff;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        left:15px;
+        top:15px;
+    }
+    .cc:hover{
+        border-color: transparent;
+        background: #ffffff;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+    }
+    .dd{
+        position: absolute;
+        width:200px;
+        height: 200px;
+        border:15px solid rgba(255,255,255,0.5);
+        margin: 0px auto;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-transition: border-color .3s;
+        -moz-transition: border-color .3s;
+        -ms-transition: border-color .3s;
+        -o-transition: border-color .3s;
+        transition: border-color .3s;
+    }
+</style>
+<div class="aa">
+    <div class="cc" id="ccid"></div>
+    <div class="" id="ddid"></div>
+</div>
 </body>
 
 </html>
