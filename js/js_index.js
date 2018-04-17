@@ -1,25 +1,3 @@
-(function ($) {
-    $(document).ready(function () {
-        // $(".shopClass_show").hover(function(){
-        //     $(".shopall").toggle();
-        // });
-        $(".shopClass_item").hover(function () {
-            $(this).find("a").css("color", "#000");
-            $(this).css("backgroundColor", "#fff");
-            $(this).find(".shopall").show();
-        }, function () {
-            $(this).css("backgroundColor", "#4593FD");
-            $(this).find("a").css("color", "#fff");
-            $(this).find(".shopall").hide();
-        });
-
-        $(".shopClass").hover(function () {
-            if (!$(".shopClass_show").is(":animated")) {
-                $(".shopClass_show").stop().slideToggle("slow");
-            }
-        });
-    });
-})(jQuery);
         function weituo(e){
             var event=e||window.event;
             var target=event.target||event.srcElement;
@@ -52,6 +30,13 @@
                     this.childNodes[1].className="cal";
                     this.childNodes[0].className="f_cal";
                 }
+                paging_li[i].onmousemove=function(){
+                    document.getElementsByClassName("carouselUl")[0].childNodes[i].style.display="block";
+                }
+                paging_li[i].onmouseout=function(){
+                    document.getElementsByClassName("carouselUl")[i].style.display="none";
+                }
+
             }
             //事件委托
             // var ul = document.getElementById("navid");
