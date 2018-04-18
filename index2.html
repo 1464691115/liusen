@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>选项卡</title>
+    <script src="js/jquery-1.8.0.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -90,55 +91,42 @@
     <!--</div>-->
 <!--</div>-->
 <style>
-    body{
-        background-color: black;
-    }
-    .aa{
-        margin: 100px auto;
-        position: relative;
-
-    }
-    .cc{
-        z-index: 999;
+    .aa img{
+        width:750px;
+        height:400px;
         position: absolute;
-        width:170px;
-        height: 170px;
-        border:15px solid #ffffff;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        left:15px;
-        top:15px;
-    }
-    .cc:hover{
-        border-color: transparent;
-        background: #ffffff;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         -ms-transition: all .3s;
         -o-transition: all .3s;
         transition: all .3s;
+        opacity: 0;
     }
-    .dd{
-        position: absolute;
-        width:200px;
-        height: 200px;
-        border:15px solid rgba(255,255,255,0.5);
-        margin: 0px auto;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        -webkit-transition: border-color .3s;
-        -moz-transition: border-color .3s;
-        -ms-transition: border-color .3s;
-        -o-transition: border-color .3s;
-        transition: border-color .3s;
+    .aa img:first-child{
+        z-index: 1;
+        opacity: 1;
+    }
+    input{
+        float: right;
     }
 </style>
+<script>
+    $(function () {
+        $("input").click(function () {
+            for(var i =0;i<4;i++){
+                $(".aa>img").eq(1).css("z-index",1);
+                $(".aa>img").eq(1).css("opacity",1);
+            }
+        })
+    })
+</script>
 <div class="aa">
-    <div class="cc" id="ccid"></div>
-    <div class="" id="ddid"></div>
+    <img src="images/carousel_img/ls1.jpg" alt="">
+    <img src="images/carousel_img/ls2.jpg" alt="">
+    <img src="images/carousel_img/ls3.jpg" alt="">
+    <img src="images/carousel_img/ls4.jpg" alt="">
 </div>
+<input type="button" value="点击">
 </body>
 
 </html>

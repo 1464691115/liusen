@@ -242,6 +242,7 @@ body {
 }
 .carouselUl li{
     position: absolute;
+
 }
 .carouselUl li img{
     width:750px;

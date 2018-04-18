@@ -20,17 +20,17 @@
         });
 
         //轮播图
-        $(".carouselBar").hover(function () {
-            if(time_image){
-                clearInterval(time_image);
-            }
-        },function () {
-            console.log(time_image);
-            if(time_image){
-                clearInterval(time_image);
-            }
-            setInterval(time_imgFun,2000);
-        })
+        // $(".carouselBar").hover(function () {
+        //     if(time_image){
+        //         clearInterval(time_image);
+        //     }
+        // },function () {
+        //     console.log(time_image);
+        //     if(time_image){
+        //         clearInterval(time_image);
+        //     }
+        //     setInterval(time_imgFun,2000);
+        // })
         for(var i =0;i<$("#pagingid>li").length;i++){
             $("#pagingid>li")[i].innerHTML="<div id='f_id' class='f_cal'></div><div id='m_id'></div>";
         }
@@ -42,7 +42,7 @@
             $("#pagingid>li").children("#m_id").removeClass("m_cal");
             $(e).children("#m_id").addClass("m_cal");
             $(e).children("#f_id").addClass("f_calh");
-            
+            console.log();
         }
         $("#pagingid>li").hover(function(){
             zx_pagin(this);
@@ -67,6 +67,6 @@
                 });
             }
         },
-        time_image = setInterval(time_imgFun,2000);
+        time_image = setInterval(time_imgFun,2500);
     });
 })(jQuery);
