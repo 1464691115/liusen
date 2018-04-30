@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            display: inline-block;
+            margin-left: 30px;
+            width: 150px;
+            height: 40px;
+            background: #FFFFFF;
+            border-bottom: 2px solid #8A2BE2;
+            font: 16px/40px "微软雅黑";
+            text-align: center;
+            color: #000000;
+        }
+
+        span.current,
+        span:hover {
+            background: #8A2BE2;
+            color: #FFFFFF;
+        }
+
+        .hd {
+            height: 40px;
+        }
+
+        .bd {
+            height: 400px;
+            padding: 10px 30px;
+            font-size: 50px;
+        }
+
+        .bd>div {
+            display: none;
+        }
+
+        .bd .show {
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // var sp = document.getElementsByTagName("span");
+            // var cons = document.querySelector(".bd").getElementsByTagName("div");
+            // for(var i = 0; i < sp.length; i++) {
+            //     sp[i].index = i;
+            //
+            //     sp[i].onmouseover = function() {
+            //         for(var j = 0; j < sp.length; j++) {
+            //             sp[j].className = "";
+            //             cons[j].className = "";
+            //         }
+            //         this.className = "current";
+            //         cons[this.index].className = "show";
+            //     }
+            // }
+            document.getElementById("ccid").onmousemove=function () {
+                document.getElementById("ddid").classList.add("dd");
+            }
+            document.getElementById("ccid").onmouseout=function () {
+                document.getElementById("ddid").classList.remove("dd");
+            }
+        }
+    </script>
+</head>
+
+<body>
+<!--<div class="tab_box">-->
+    <!--<div class="hd">-->
+        <!--<span class="current">新闻</span>-->
+        <!--<span>军事</span>-->
+        <!--<span>房产</span>-->
+        <!--<span>体育</span>-->
+        <!--<span>娱乐</span>-->
+    <!--</div>-->
+    <!--<div class="bd">-->
+        <!--<div class="show">我是骑车新闻</div>-->
+        <!--<div>我是军事新闻</div>-->
+        <!--<div>我是房产新闻</div>-->
+        <!--<div>我是体育新闻</div>-->
+        <!--<div>我是娱乐新闻</div>-->
+    <!--</div>-->
+<!--</div>-->
+<style>
+    .aa img{
+        width:750px;
+        height:400px;
+        position: absolute;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        opacity: 0;
+    }
+    .aa img:first-child{
+        z-index: 1;
+        opacity: 1;
+    }
+    input{
+        float: right;
+    }
+</style>
+<script>
+    $(function () {
+        $("input").click(function () {
+            for(var i =0;i<4;i++){
+                $(".aa>img").eq(1).css("z-index",1);
+                $(".aa>img").eq(1).css("opacity",1);
+            }
+        })
+    })
+</script>
+<div class="aa">
+    <img src="images/carousel_img/ls1.jpg" alt="">
+    <img src="images/carousel_img/ls2.jpg" alt="">
+    <img src="images/carousel_img/ls3.jpg" alt="">
+    <img src="images/carousel_img/ls4.jpg" alt="">
+</div>
+<input type="button" value="点击">
+</body>
+
+</html>
